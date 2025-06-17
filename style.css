@@ -1,0 +1,169 @@
+:root {
+  --color-primary: #4f46e5;
+  --color-primary-dark: #4338ca;
+  --color-primary-light: #eef2ff;
+  --color-success: #10b981;
+  --color-success-dark: #059669;
+  --color-warning: #f59e0b;
+  --color-warning-dark: #d97706;
+  --color-danger: #ef4444;
+  --color-bg: #f3f4f6;
+  --color-text: #374151;
+  --color-text-light: #6b7280;
+  --color-border: #d1d5db;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  color: var(--color-primary);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--color-border);
+    pointer-events: none;
+    transition: color 0.3s;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px 16px 14px 48px; /* Espaço para o ícone */
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  -webkit-appearance: none;
+   -moz-appearance: none;
+        appearance: none;
+}
+
+select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 1rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25em;
+}
+
+.input-wrapper:focus-within .icon {
+    color: var(--color-primary);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+select.select-green { background-color: #f0fdf4; border-color: var(--color-success); }
+select.select-yellow { background-color: #fefce8; border-color: var(--color-warning); }
+select.select-red { background-color: #fef2f2; border-color: var(--color-danger); }
+
+.button-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn .icon { width: 20px; height: 20px; }
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-calcular { background-color: var(--color-success); color: white; }
+.btn-calcular:hover:not(:disabled) { background-color: var(--color-success-dark); }
+
+.btn-pdf { background-color: var(--color-primary); color: white; }
+.btn-pdf:hover:not(:disabled) { background-color: var(--color-primary-dark); }
+
+.btn-reiniciar { background-color: var(--color-warning); color: #422006; }
+.btn-reiniciar:hover:not(:disabled) { background-color: var(--color-warning-dark); }
+
+.btn:disabled { background-color: #e5e7eb; color: #9ca3af; cursor: not-allowed; }
+
+.resultado {
+  margin-top: 40px;
+  background: var(--color-primary-light);
+  padding: 24px;
+  border-radius: 12px;
+  line-height: 1.8;
+  display: none;
+}
+.resultado h4 {
+    margin-top: 0;
+    font-weight: 600;
+    color: var(--color-primary);
+}
